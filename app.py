@@ -1,15 +1,15 @@
 from flask import Flask,jsonify,request
 import openai
 import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
+
+load_dotenv()
 openai.api_key = os.getenv('OPENAI_API_KEY')
 
-@app.route("/")
-def home():
-    return "Hello, World!"
 
-@app.route('/dad-joke')
+@app.route('/')
 def dad_joke():
     response = openai.Completion.create(
         model="text-davinci-003",

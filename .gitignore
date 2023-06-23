@@ -1,0 +1,30 @@
+# .gitignore
+
+# Ignore the .env file containing sensitive information
+.env
+
+# Ignore Python virtual environment
+.venv
+
+# Ignore Python byte-compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyc.so
+
+# Ignore Python distribution files
+dist/
+*.egg-info/
+*.egg
+*.eggs
+*.pyc
+*.pyo
+*.pyd
+*.pyc.so
+
+# Ignore Flask file uploads
+uploads/
+
+# Ignore VS Code settings
+.vscode/
