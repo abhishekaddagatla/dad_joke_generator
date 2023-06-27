@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-4"></div>
             <div class="col-4" id="topic-text">
-                <input class="form-control" type="text" placeholder="topic of joke">
+                <input class="form-control" id="topic-input" type="text" placeholder="topic of joke">
             </div>
             <div class="col-4">
             </div>
@@ -30,6 +30,12 @@
         <div class="row">
             <div class="col-12 text-center">
                 <button class="btn btn-primary" onclick="generateJoke()">Generate Joke</button>
+            </div>
+        </div>
+        <div class = "row">
+            <div class="col-12 text-center">
+                <p id="joke-container"></p>
+                <div id="error-container"></div>
             </div>
         </div>
         <script src="./script.js"></script>

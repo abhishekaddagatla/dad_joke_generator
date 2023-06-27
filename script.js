@@ -1,6 +1,17 @@
-document.getElementById('generate-joke').addEventListener('click', function() {
-    fetch('http://127.0.0.1:5000') 
-        .then(response => response.json())
-        .then(data => document.getElementById('joke').textContent = data.joke)
-        .catch(error => console.error('Error:', error));
-});
+async function generateJoke(){
+    let topic = document.getElementById("topic-input").value;
+    let url = 'http://127.0.0.1:5000'
+    try{
+        //fetches joke from flask server
+        let response = await fetch(url);
+        let data = await response.json();
+        //updates joke container with new joke
+        document.getElementById('joke-container').innerText = data.joke;
+        document.getElementById('error-container').innerText = '';
+    } catch(error){
+        //displays error
+        document.getElementById('error-container').innerText = 'Something went wrong bruh';
+        document.getElementById('joke-container').innerText = '';
+    }
+
+}
