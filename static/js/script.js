@@ -16,11 +16,18 @@
 
 // }
 
-function test_function() {
+
+
+function generateJoke() {
+    let topic = document.getElementById("topic-input").value;
+    if(topic == null){
+        topic = "anything";
+    }
+    console.log("topic is " + topic);
     $.ajax({
         type: "POST",
         url: "/generate_joke",
-        data: null, //content of the text box
+        data: { "query": topic }, //content of the text box
         success: function (response) {
             console.log(response);
         }
